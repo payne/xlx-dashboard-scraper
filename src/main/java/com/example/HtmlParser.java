@@ -1,3 +1,4 @@
+
 package com.example;
 
 import com.example.model.Module;
@@ -142,12 +143,14 @@ public class HtmlParser {
 
             // Find the corresponding node cell in the table body
             int columnIndex = header.elementSiblingIndex();
-            Element nodeCell = moduleTable.select("tr").get(1).select("td").get(columnIndex);
+            Elements tds = moduleTable.select("tr").get(1).select("> td");
+            Element nodeCell = tds.get(columnIndex);
 
             // Extract nodes from the nested table
-            List<String> nodes = nodeCell.select("table tr td a").stream()
+            List<String> nodes = nodeCell.select("table tr td a[href*='aprs.fi']").stream()
                     .map(Element::text)
                     .filter(text -> !text.isEmpty())
+                    .distinct()
                     .collect(Collectors.toList());
             module.setNodes(nodes);
 

@@ -624,60 +624,60 @@
     "label" : "Mountain SkynetWIRES-X 00587BM 31084DG-ID 11\nB",
     "connections" : [ "WIRES-X: 00587</a><a></a>", "BrandMeister: 31084</a>" ],
     "dgId" : "11</a>",
-    "nodes" : [ ]
+    "nodes" : [ "WD0AJG-D" ]
   }, {
     "name" : "Olympic Mountain",
     "label" : "Olympic Mountain DigitalWIRES-X 04429AllStar 289802BM 314072DG-ID 12\nC",
     "connections" : [ "WIRES-X: 04429", "AllStar: 289802", "BrandMeister: 314072</a>" ],
     "dgId" : "12</a>",
-    "nodes" : [ ]
+    "nodes" : [ "W0CDM-B", "WD0HDR-B" ]
   }, {
     "name" : "Colorado HD",
     "label" : "Colorado HDWIRES-X 43674BM 31088DG-ID 13\nD",
     "connections" : [ "WIRES-X: 43674</a>", "BrandMeister: 31088</a>" ],
     "dgId" : "13</a>",
-    "nodes" : [ "WD0AJG-D" ]
+    "nodes" : [ "WN7ANT-D", "KF0MVS-B", "K0LEE-B", "N7ABG-B", "N9DYO-B", "N0KMO-B", "W7NEE-B", "AE2TB-B", "KF7CBU-B", "KG7FXD-B", "DG6OAY-B", "AB4LW-B", "WA3ADI-B", "K3FZT-B", "KA2Y-B", "KE0MKM-B", "KB0TDW-B", "AE0NV-B", "KI5SYR-B", "N0AA-B", "W0DCH-B", "N5FKU-B", "KF0ODD-B", "KD0YD-B", "KF0IGK-B", "KC8I-B", "KE0DC-B", "KJ7T-B", "W0WAL-B", "W6DS-B", "W0KPH-B", "W0KVZ-B", "AD0HI-B", "N1AJW-B", "W0JRK-B" ]
   }, {
     "name" : "NoCO",
     "label" : "NoCOWIRES-X 80851BM 3171 DG-ID 14\nE",
     "connections" : [ "WIRES-X: 80851</a>", "BrandMeister: 3171</a>" ],
     "dgId" : "14</a>",
-    "nodes" : [ ]
+    "nodes" : [ "W1VAN-B" ]
   }, {
     "name" : "SuperFreq Digital",
     "label" : "SuperFreq DigitalWIRES-X 85958BM 310869 DG-ID 15\nF",
     "connections" : [ "WIRES-X: 85958</a>", "BrandMeister: 310869</a>" ],
     "dgId" : "15</a>",
-    "nodes" : [ "W0CDM-B", "WD0HDR-B" ]
+    "nodes" : [ "W1VAN-B", "KF0ICI-B", "KG0REK-B", "W4SHB-B" ]
   }, {
     "name" : "<a href=\"http://multi-reflector.pistar.uk\" target=\"_blank\">Pi-Star Chat</a>",
     "label" : "Pi-Star ChatBM 31672DG-ID 16\nG",
     "connections" : [ "BrandMeister: 31672</a>" ],
     "dgId" : "16</a>",
-    "nodes" : [ ]
+    "nodes" : [ "W0SUN-D" ]
   }, {
     "name" : "Venture Overland",
     "label" : "Venture OverlandWIRES-X 81335\nAllStar 54897BM 31655DG-ID 17\nH",
     "connections" : [ "WIRES-X: 81335</a>", "AllStar: 54897", "BrandMeister: 31655</a>" ],
     "dgId" : "17</a>",
-    "nodes" : [ ]
+    "nodes" : [ "W6SPY-B", "N1RIJ-B", "N7MYW-B", "KB3HWM-B" ]
   }, {
     "name" : "Interlink",
     "label" : "Interlink\nTGIF 720AmComm 31088XLX720 PRA\nXLX372\nDG-ID 18\nI",
     "connections" : [ ],
     "dgId" : "18",
-    "nodes" : [ "WN7ANT-D", "KF0MVS-B", "K0LEE-B", "N7ABG-B", "N9DYO-B", "N0KMO-B", "W7NEE-B", "AE2TB-B", "KF7CBU-B", "K0LEE-B", "KG7FXD-B", "DG6OAY-B", "AB4LW-B", "WA3ADI-B", "K3FZT-B", "KA2Y-B", "KE0MKM-B", "KB0TDW-B", "AE0NV-B", "KI5SYR-B", "N0AA-B", "W0DCH-B", "N5FKU-B", "KF0ODD-B", "K3FZT-B", "KD0YD-B", "KF0IGK-B", "KD0YD-B", "KC8I-B", "KE0DC-B", "KJ7T-B", "KJ7T-B", "KE0MKM-B", "W0WAL-B", "W6DS-B", "W0KPH-B", "W0KVZ-B", "AD0HI-B", "N1AJW-B", "W0KVZ-B", "W0JRK-B" ]
+    "nodes" : [ "KF0LPT-B", "N1UKJ-B", "WD0HDR-B", "W7FMJ-B" ]
   }, {
     "name" : "Special K",
     "label" : "Special KTGIF 420AllStar 58823DG-ID 20\nK",
     "connections" : [ "AllStar: 58823</a>" ],
     "dgId" : "20</a>",
-    "nodes" : [ ]
+    "nodes" : [ "W0CDM-B", "K5NWZ-D" ]
   }, {
     "name" : "VHF+",
     "label" : "VHF+Weak SignalNETD-StarDG-ID 22\nM",
     "connections" : [ ],
     "dgId" : "22</a>",
-    "nodes" : [ ]
+    "nodes" : [ "KC0IJH-B", "K0FYR-H", "KB0UOA-B" ]
   } ]
 }
