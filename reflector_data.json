@@ -1,0 +1,688 @@
+{
+  "version" : "2.5.2",
+  "dashboardVersion" : "2.4.2 Colorado Digital Main Website / Service uptime: 50 days 23:45:26",
+  "uptime" : "50 days 23:45:26",
+  "users" : [ {
+    "number" : "",
+    "country" : "United States",
+    "callSign" : "W0SUN",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "KF0LPT B / XLX372",
+    "lastHeard" : "26.12.2024 15:22",
+    "listeningOn" : "I",
+    "transmitting" : true
+  }, {
+    "number" : "2",
+    "country" : "United States",
+    "callSign" : "KC0SIQ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 15:22",
+    "listeningOn" : "E",
+    "transmitting" : false
+  }, {
+    "number" : "3",
+    "country" : "United States",
+    "callSign" : "N1UKJ",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "N1UKJ B",
+    "lastHeard" : "26.12.2024 15:22",
+    "listeningOn" : "I",
+    "transmitting" : false
+  }, {
+    "number" : "4",
+    "country" : "United States",
+    "callSign" : "W1VAN",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 15:22",
+    "listeningOn" : "E",
+    "transmitting" : false
+  }, {
+    "number" : "5",
+    "country" : "United States",
+    "callSign" : "W0KPH",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "W0KPH B",
+    "lastHeard" : "26.12.2024 15:21",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "6",
+    "country" : "Serbia",
+    "callSign" : "YU4BRE",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 15:15",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "7",
+    "country" : "United States",
+    "callSign" : "AC7VA",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 15:03",
+    "listeningOn" : "C",
+    "transmitting" : false
+  }, {
+    "number" : "8",
+    "country" : "United States",
+    "callSign" : "N7VDR",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 15:02",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "9",
+    "country" : "Ukraine",
+    "callSign" : "UR4UTM",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 14:51",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "10",
+    "country" : "United States",
+    "callSign" : "NC2WX",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 14:29",
+    "listeningOn" : "A",
+    "transmitting" : false
+  }, {
+    "number" : "11",
+    "country" : "United States",
+    "callSign" : "WY3D",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 14:28",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "12",
+    "country" : "United States",
+    "callSign" : "N1AJW",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "N1AJW B",
+    "lastHeard" : "26.12.2024 14:05",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "13",
+    "country" : "United States",
+    "callSign" : "KF0IGK",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:41",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "14",
+    "country" : "United States",
+    "callSign" : "KD0NPT",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:32",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "15",
+    "country" : "United States",
+    "callSign" : "N2BEZ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:27",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "16",
+    "country" : "United States",
+    "callSign" : "W0CDM",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "W0CDM B",
+    "lastHeard" : "26.12.2024 13:25",
+    "listeningOn" : "A",
+    "transmitting" : false
+  }, {
+    "number" : "17",
+    "country" : "United States",
+    "callSign" : "N6UTC",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:22",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "18",
+    "country" : "United States",
+    "callSign" : "N0CALL",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:21",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "19",
+    "country" : "England",
+    "callSign" : "G4FDN",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:18",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "20",
+    "country" : "United States",
+    "callSign" : "K4APO",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 13:04",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "21",
+    "country" : "United States",
+    "callSign" : "KC3UNI",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 11:42",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "22",
+    "country" : "United States",
+    "callSign" : "N1TLH",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 11:41",
+    "listeningOn" : "F",
+    "transmitting" : false
+  }, {
+    "number" : "23",
+    "country" : "United States",
+    "callSign" : "W0WAL",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 11:11",
+    "listeningOn" : "E",
+    "transmitting" : false
+  }, {
+    "number" : "24",
+    "country" : "United States",
+    "callSign" : "KF0LPT",
+    "suffix" : "F70",
+    "dprsEnabled" : true,
+    "viaPeer" : "KF0LPT B",
+    "lastHeard" : "26.12.2024 11:06",
+    "listeningOn" : "I",
+    "transmitting" : false
+  }, {
+    "number" : "25",
+    "country" : "United States",
+    "callSign" : "N4MBZ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 10:49",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "26",
+    "country" : "United States",
+    "callSign" : "W7NEE",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 10:43",
+    "listeningOn" : "C",
+    "transmitting" : false
+  }, {
+    "number" : "27",
+    "country" : "United States",
+    "callSign" : "KA0M",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 10:22",
+    "listeningOn" : "E",
+    "transmitting" : false
+  }, {
+    "number" : "28",
+    "country" : "United States",
+    "callSign" : "AB7I",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 10:13",
+    "listeningOn" : "C",
+    "transmitting" : false
+  }, {
+    "number" : "29",
+    "country" : "Netherlands",
+    "callSign" : "PD0SDO",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 09:34",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "30",
+    "country" : "United States",
+    "callSign" : "W6SPY",
+    "suffix" : "D74",
+    "dprsEnabled" : true,
+    "viaPeer" : "W6SPY B",
+    "lastHeard" : "26.12.2024 09:13",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "31",
+    "country" : "United States",
+    "callSign" : "KD0HLP",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "W0SUN Y / XLX720",
+    "lastHeard" : "26.12.2024 09:12",
+    "listeningOn" : "I",
+    "transmitting" : false
+  }, {
+    "number" : "32",
+    "country" : "United States",
+    "callSign" : "KG0REK",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "KG0REK B",
+    "lastHeard" : "26.12.2024 08:53",
+    "listeningOn" : "F",
+    "transmitting" : false
+  }, {
+    "number" : "33",
+    "country" : "Canada",
+    "callSign" : "VA3UV",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 08:43",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "34",
+    "country" : "Italy",
+    "callSign" : "IT9IJI",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 08:13",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "35",
+    "country" : "Canada",
+    "callSign" : "VE3XID",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 08:07",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "36",
+    "country" : "United States",
+    "callSign" : "N7QXH",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "N7QXH D",
+    "lastHeard" : "26.12.2024 07:45",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "37",
+    "country" : "United States",
+    "callSign" : "N7MYW",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 07:45",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "38",
+    "country" : "United States",
+    "callSign" : "KB7RQQ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 07:42",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "39",
+    "country" : "United States",
+    "callSign" : "KO4UXX",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "26.12.2024 07:32",
+    "listeningOn" : "A",
+    "transmitting" : false
+  }, {
+    "number" : "40",
+    "country" : "United States",
+    "callSign" : "KB6UMY",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "KB6UMY B",
+    "lastHeard" : "26.12.2024 00:00",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "41",
+    "country" : "United States",
+    "callSign" : "W9SJO",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 21:38",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "42",
+    "country" : "United States",
+    "callSign" : "WA2NYY",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 21:34",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "43",
+    "country" : "United States",
+    "callSign" : "KE0SMR",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 20:07",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "44",
+    "country" : "United States",
+    "callSign" : "KB0VGD",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 19:07",
+    "listeningOn" : "F",
+    "transmitting" : false
+  }, {
+    "number" : "45",
+    "country" : "United States",
+    "callSign" : "W0KVZ",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "KF0LPT B / XLX372",
+    "lastHeard" : "25.12.2024 18:20",
+    "listeningOn" : "I",
+    "transmitting" : false
+  }, {
+    "number" : "46",
+    "country" : "United States",
+    "callSign" : "N7EAL",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 18:17",
+    "listeningOn" : "F",
+    "transmitting" : false
+  }, {
+    "number" : "47",
+    "country" : "United States",
+    "callSign" : "N0KAT",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "N0KAT D",
+    "lastHeard" : "25.12.2024 18:00",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "48",
+    "country" : "United States",
+    "callSign" : "K1UPA",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 17:26",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "49",
+    "country" : "United States",
+    "callSign" : "KA5JKI",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 17:02",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "50",
+    "country" : "United States",
+    "callSign" : "KE9BVB",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 15:23",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "51",
+    "country" : "United States",
+    "callSign" : "W6DOZ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 15:06",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "52",
+    "country" : "United States",
+    "callSign" : "KF0PQQ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 14:42",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "53",
+    "country" : "United States",
+    "callSign" : "KN6VV",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 13:05",
+    "listeningOn" : "F",
+    "transmitting" : false
+  }, {
+    "number" : "54",
+    "country" : "Australia",
+    "callSign" : "VK2MFW",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 12:37",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "55",
+    "country" : "United States",
+    "callSign" : "WD1AJM",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 12:12",
+    "listeningOn" : "H",
+    "transmitting" : false
+  }, {
+    "number" : "56",
+    "country" : "United States",
+    "callSign" : "N4AAA",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 11:06",
+    "listeningOn" : "A",
+    "transmitting" : false
+  }, {
+    "number" : "57",
+    "country" : "United States",
+    "callSign" : "KO4RXP",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 11:04",
+    "listeningOn" : "G",
+    "transmitting" : false
+  }, {
+    "number" : "58",
+    "country" : "United States",
+    "callSign" : "KC6PCB",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 10:17",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "59",
+    "country" : "United States",
+    "callSign" : "KB2IDX",
+    "suffix" : "",
+    "dprsEnabled" : true,
+    "viaPeer" : "KB2IDX B",
+    "lastHeard" : "25.12.2024 09:42",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "60",
+    "country" : "Canada",
+    "callSign" : "VA3YZZ",
+    "suffix" : "DMR",
+    "dprsEnabled" : true,
+    "viaPeer" : "XLX303 G / BM3102",
+    "lastHeard" : "25.12.2024 09:40",
+    "listeningOn" : "D",
+    "transmitting" : false
+  }, {
+    "number" : "W0CDM-B N0TOA-B",
+    "country" : "",
+    "callSign" : "N0TOA-B",
+    "suffix" : "WD0AJG-D",
+    "dprsEnabled" : false,
+    "viaPeer" : "W0CDM-B WD0HDR-B",
+    "lastHeard" : "W0CDM-B",
+    "listeningOn" : "WD0HDR-B",
+    "transmitting" : false
+  } ],
+  "modules" : [ {
+    "name" : "<table width=\"100%\" border=\"0\">\n <tbody>\n  <tr>\n   <td align=\"left\">\n    <form name=\"frmFilterCallSign\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetCallsignFilter\" placeholder=\"Callsign\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n   <td align=\"right\" style=\"padding-right:3px;\">\n    <form name=\"frmFilterModule\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetModuleFilter\" placeholder=\"Module\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n  </tr>\n </tbody>\n</table>",
+    "label" : "<table width=\"100%\" border=\"0\">\n <tbody>\n  <tr>\n   <td align=\"left\">\n    <form name=\"frmFilterCallSign\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetCallsignFilter\" placeholder=\"Callsign\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n   <td align=\"right\" style=\"padding-right:3px;\">\n    <form name=\"frmFilterModule\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetModuleFilter\" placeholder=\"Module\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n  </tr>\n </tbody>\n</table>",
+    "connections" : [ ],
+    "nodes" : [ "W0CDM-B", "N0TOA-B" ]
+  }, {
+    "name" : "CO Severe WX",
+    "label" : "CO Severe WX<br><a>WIRES-X 65045</a><br><a>AllStar 289800</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31083\" target=\"_blank\">BM 31083</a><br><a>DG-ID 10</a><br><br>\nA",
+    "connections" : [ "WIRES-X: 65045</a>", "AllStar: 289800</a>", "BrandMeister: 31083</a>" ],
+    "dgId" : "10</a>",
+    "nodes" : [ "WD0AJG-D" ]
+  }, {
+    "name" : "Mountain Skynet",
+    "label" : "Mountain Skynet<br><a>WIRES-X 00587</a><a></a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31084\" target=\"_blank\">BM 31084</a><br><a>DG-ID 11</a><br><br><br>\nB",
+    "connections" : [ "WIRES-X: 00587</a><a></a>", "BrandMeister: 31084</a>" ],
+    "dgId" : "11</a>",
+    "nodes" : [ "W0CDM-B", "WD0HDR-B" ]
+  }, {
+    "name" : "Olympic Mountain",
+    "label" : "Olympic Mountain<br><a> Digital</a><br><a>WIRES-X 04429<br></a><a>AllStar 289802<br></a><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=314072\" target=\"_blank\">BM 314072</a><br><a>DG-ID 12</a><br>\nC",
+    "connections" : [ "WIRES-X: 04429", "AllStar: 289802", "BrandMeister: 314072</a>" ],
+    "dgId" : "12</a>",
+    "nodes" : [ "WN7ANT-D", "KF0MVS-B", "K0LEE-B", "N7ABG-B", "N9DYO-B", "N0KMO-B", "W7NEE-B", "AE2TB-B", "KF7CBU-B", "K0LEE-B", "KG7FXD-B", "DG6OAY-B", "AB4LW-B", "WA3ADI-B", "K3FZT-B", "KA2Y-B", "KE0MKM-B", "KB0TDW-B", "AE0NV-B", "KI5SYR-B", "N0AA-B", "W0DCH-B", "N5FKU-B", "KF0ODD-B", "K3FZT-B", "KD0YD-B", "KF0IGK-B", "KD0YD-B", "KC8I-B", "KE0DC-B", "KJ7T-B", "KJ7T-B", "KE0MKM-B", "W0WAL-B", "W6DS-B", "W0KPH-B", "W0KVZ-B", "AD0HI-B", "N1AJW-B", "W0KVZ-B", "W0JRK-B" ]
+  }, {
+    "name" : "Colorado HD",
+    "label" : "Colorado HD<br><a>WIRES-X 43674</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31088\" target=\"_blank\">BM 31088</a><br><a>DG-ID 13</a><br><br><br>\nD",
+    "connections" : [ "WIRES-X: 43674</a>", "BrandMeister: 31088</a>" ],
+    "dgId" : "13</a>",
+    "nodes" : [ "W1VAN-B" ]
+  }, {
+    "name" : "NoCO",
+    "label" : "NoCO<br><a>WIRES-X 80851</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=3171\" target=\"_blank\">BM 3171</a> <br><a>DG-ID 14</a><br><br><br>\nE",
+    "connections" : [ "WIRES-X: 80851</a>", "BrandMeister: 3171</a>" ],
+    "dgId" : "14</a>",
+    "nodes" : [ "W1VAN-B", "KF0ICI-B", "KG0REK-B", "W4SHB-B" ]
+  }, {
+    "name" : "SuperFreq Digital",
+    "label" : "SuperFreq Digital<br><a>WIRES-X 85958</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=310869\" target=\"_blank\">BM 310869</a> <br><a>DG-ID 15</a><br><br><br>\nF",
+    "connections" : [ "WIRES-X: 85958</a>", "BrandMeister: 310869</a>" ],
+    "dgId" : "15</a>",
+    "nodes" : [ "W0SUN-D" ]
+  }, {
+    "name" : "<a href=\"http://multi-reflector.pistar.uk\" target=\"_blank\">Pi-Star Chat</a>",
+    "label" : "<a href=\"http://multi-reflector.pistar.uk\" target=\"_blank\">Pi-Star Chat</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31672\" target=\"_blank\">BM 31672</a><br><a>DG-ID 16</a><br><br><br><br><br>\nG",
+    "connections" : [ "BrandMeister: 31672</a>" ],
+    "dgId" : "16</a>",
+    "nodes" : [ "W6SPY-B", "N1RIJ-B", "N7MYW-B", "KB3HWM-B" ]
+  }, {
+    "name" : "Venture Overland",
+    "label" : "Venture Overland<br><a>WIRES-X 81335</a><br>\nAllStar 54897<br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31655\" target=\"_blank\">BM 31655</a><br><a>DG-ID 17</a><br><br>\nH",
+    "connections" : [ "WIRES-X: 81335</a>", "AllStar: 54897", "BrandMeister: 31655</a>" ],
+    "dgId" : "17</a>",
+    "nodes" : [ "KF0LPT-B", "N1UKJ-B", "WD0HDR-B", "W7FMJ-B" ]
+  }, {
+    "name" : "Interlink",
+    "label" : "Interlink<br>\nTGIF 720<br><a href=\"http://www.amcomm.network/en/servers\" target=\"_blank\">AmComm 31088</a><br><a href=\"https://xlx720.parkerradio.org/\" target=\"_blank\">XLX720 PRA</a><br>\nXLX372<br>\nDG-ID 18<br><br>\nI",
+    "connections" : [ ],
+    "dgId" : "18",
+    "nodes" : [ "W0CDM-B", "K5NWZ-D" ]
+  }, {
+    "name" : "Special K",
+    "label" : "Special K<br><a>TGIF 420<br></a><a href=\"http://58823.nodes.allstarlink.org/supermon/link.php?nodes=58823\" target=\"_blank\">AllStar 58823</a><br><a>DG-ID 20</a><br><br><br><br>\nK",
+    "connections" : [ "AllStar: 58823</a>" ],
+    "dgId" : "20</a>",
+    "nodes" : [ "KC0IJH-B", "K0FYR-H", "KB0UOA-B" ]
+  }, {
+    "name" : "VHF+",
+    "label" : "VHF+<br><a>Weak Signal<br></a><a>NET<br></a><a>D-Star</a><br><a>DG-ID 22</a><br><br><br>\nM",
+    "connections" : [ ],
+    "dgId" : "22</a>",
+    "nodes" : [ ]
+  } ]
+}
