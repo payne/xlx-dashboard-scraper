@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name="description" content="XLX303 is a Colorado Multiprotocol Reflector System for Ham Radio Operators." />
+   <meta name="keywords"    content="Ham Radio, D-Star, XReflector, XLX, XRF, DCS, REF, " />
+   <meta name="author"      content="W0RMT" />
+   <meta name="revisit"     content="After 30 Days" />
+   <meta name="robots"      content="W0RMT" />
+   
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>XLX303 Reflector Dashboard</title>
+   <link rel="stylesheet" type="text/css" href="./css/layout.css">
+   <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+   <script src="./js/jquery-1.12.4.min.js"></script>
+   <script>
+      var PageRefresh;
+      
+      function ReloadPage() {
+         $.get("./index.php", function(data) {
+            var BodyStart = data.indexOf("<bo"+"dy");
+            var BodyEnd = data.indexOf("</bo"+"dy>");
+            if ((BodyStart >= 0) && (BodyEnd > BodyStart)) {
+               BodyStart = data.indexOf(">", BodyStart)+1;
+               $("body").html(data.substring(BodyStart, BodyEnd));
+            }
+         })
+            .always(function() {
+               PageRefresh = setTimeout(ReloadPage, 10000);
+            });
+      }
+      PageRefresh = setTimeout(ReloadPage, 10000);
+
+      function SuspendPageRefresh() {
+         clearTimeout(PageRefresh);
+      }
+   </script></head>
+<body>
+      <div id="top"><img src="./img/codig_header.jpg" alt="XLX303 Colorado Digital Multiprotocol Reflector Gateway" style="margin-top:0px;" />
+      <br />&nbsp;&nbsp;&nbsp; XLX303&nbsp;v2.5.2&nbsp;-&nbsp;Dashboard v2.4.2&nbsp;<a href="http://coloradodigital.net" target="_blank">Colorado Digital Main Website</a>&nbsp;&nbsp;/&nbsp;&nbsp;Service uptime: <span id="suptime">50 days 23:45:26</span></div>
+   <div id="menubar">
+      <div id="menu">
+         <table border="0">
+            <tr>
+               <td><a href="./index.php" class="menulinkactive">Users / Modules</a></td>
+               <td><a href="./index.php?show=repeaters" class="menulink">Repeaters / Nodes (66)</a></td>
+               <td><a href="./index.php?show=peers" class="menulink">Peers (4)</a></td>
+               <td><a href="./index.php?show=modules" class="menulink">Modules list</a></td>
+               <td><a href="./index.php?show=reflectors" class="menulink">Reflectors list</a></td>
+               
+               <td><a href="./index.php?show=liveircddb" class="menulink">D-Star live</a></td>            </tr>
+          </table>
+      </div>
+   </div>
+   <div id="content" align="center">
+
+<table border="0">
+   <tr>
+      <td  valign="top">
+         
+
+<table class="listingtable">
+ <tr>
+   <th colspan="8">
+      <table width="100%" border="0">
+         <tr>
+            <td align="left">
+               <form name="frmFilterCallSign" method="post" action="./index.php">
+                  <input type="hidden" name="do" value="SetFilter" />
+                  <input type="text" class="FilterField" value="" name="txtSetCallsignFilter" placeholder="Callsign" onfocus="SuspendPageRefresh();" onblur="setTimeout(ReloadPage, 10000);" />
+                  <input type="submit" value="Apply" class="FilterSubmit" />
+               </form>
+            </td>            
+            <td align="right" style="padding-right:3px;">
+               <form name="frmFilterModule" method="post" action="./index.php">
+                  <input type="hidden" name="do" value="SetFilter" />
+                  <input type="text" class="FilterField" value="" name="txtSetModuleFilter" placeholder="Module" onfocus="SuspendPageRefresh();" onblur="setTimeout(ReloadPage, 10000);" />
+                  <input type="submit" value="Apply" class="FilterSubmit" />
+               </form>
+            </td>
+      </table>
+   </th>
+</tr>   
+ <tr>   
+   <th>#</th>
+   <th>Flag</th>
+   <th>Callsign</th>
+   <th>Suffix</th>
+   <th>DPRS</th>
+   <th>Via / Peer</th>
+   <th>Last heard</th>
+   <th align="center" valign="middle"><img src="./img/ear.png" alt="Listening on" /></th>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35"><img src="./img/tx.gif" style="margin-top:3px;" height="20"/></td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W0SUN" class="pl" target="_blank">W0SUN</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W0SUN" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KF0LPT  B / XLX372</td>
+   <td width="150">26.12.2024 15:22</td>
+   <td align="center" width="30">I</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">2</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KC0SIQ" class="pl" target="_blank">KC0SIQ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KC0SIQ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 15:22</td>
+   <td align="center" width="30">E</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">3</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N1UKJ" class="pl" target="_blank">N1UKJ</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N1UKJ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">N1UKJ   B</td>
+   <td width="150">26.12.2024 15:22</td>
+   <td align="center" width="30">I</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">4</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W1VAN" class="pl" target="_blank">W1VAN</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W1VAN" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 15:22</td>
+   <td align="center" width="30">E</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">5</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W0KPH" class="pl" target="_blank">W0KPH</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W0KPH" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">W0KPH   B</td>
+   <td width="150">26.12.2024 15:21</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">6</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/rs.png" height="15" alt="Serbia" /><span>Serbia</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/YU4BRE" class="pl" target="_blank">YU4BRE</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/YU4BRE" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 15:15</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">7</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/AC7VA" class="pl" target="_blank">AC7VA</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/AC7VA" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 15:03</td>
+   <td align="center" width="30">C</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">8</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N7VDR" class="pl" target="_blank">N7VDR</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N7VDR" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 15:02</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">9</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/ua.png" height="15" alt="Ukraine" /><span>Ukraine</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/UR4UTM" class="pl" target="_blank">UR4UTM</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/UR4UTM" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 14:51</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">10</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/NC2WX" class="pl" target="_blank">NC2WX</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/NC2WX" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 14:29</td>
+   <td align="center" width="30">A</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">11</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/WY3D" class="pl" target="_blank">WY3D</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/WY3D" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 14:28</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">12</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N1AJW" class="pl" target="_blank">N1AJW</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N1AJW" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">N1AJW   B</td>
+   <td width="150">26.12.2024 14:05</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">13</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KF0IGK" class="pl" target="_blank">KF0IGK</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KF0IGK" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:41</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">14</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KD0NPT" class="pl" target="_blank">KD0NPT</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KD0NPT" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:32</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">15</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N2BEZ" class="pl" target="_blank">N2BEZ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N2BEZ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:27</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">16</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W0CDM" class="pl" target="_blank">W0CDM</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W0CDM" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">W0CDM   B</td>
+   <td width="150">26.12.2024 13:25</td>
+   <td align="center" width="30">A</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">17</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N6UTC" class="pl" target="_blank">N6UTC</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N6UTC" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:22</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">18</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N0CALL" class="pl" target="_blank">N0CALL</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N0CALL" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:21</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">19</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/en.png" height="15" alt="England" /><span>England</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/G4FDN" class="pl" target="_blank">G4FDN</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/G4FDN" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:18</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">20</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/K4APO" class="pl" target="_blank">K4APO</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/K4APO" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 13:04</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">21</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KC3UNI" class="pl" target="_blank">KC3UNI</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KC3UNI" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 11:42</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">22</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N1TLH" class="pl" target="_blank">N1TLH</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N1TLH" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 11:41</td>
+   <td align="center" width="30">F</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">23</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W0WAL" class="pl" target="_blank">W0WAL</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W0WAL" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 11:11</td>
+   <td align="center" width="30">E</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">24</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KF0LPT" class="pl" target="_blank">KF0LPT</a></td>
+   <td width="60">F70</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KF0LPT" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KF0LPT  B</td>
+   <td width="150">26.12.2024 11:06</td>
+   <td align="center" width="30">I</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">25</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N4MBZ" class="pl" target="_blank">N4MBZ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N4MBZ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 10:49</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">26</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W7NEE" class="pl" target="_blank">W7NEE</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W7NEE" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 10:43</td>
+   <td align="center" width="30">C</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">27</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KA0M" class="pl" target="_blank">KA0M</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KA0M" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 10:22</td>
+   <td align="center" width="30">E</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">28</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/AB7I" class="pl" target="_blank">AB7I</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/AB7I" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 10:13</td>
+   <td align="center" width="30">C</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">29</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/nl.png" height="15" alt="Netherlands" /><span>Netherlands</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/PD0SDO" class="pl" target="_blank">PD0SDO</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/PD0SDO" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 09:34</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">30</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W6SPY" class="pl" target="_blank">W6SPY</a></td>
+   <td width="60">D74</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W6SPY" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">W6SPY   B</td>
+   <td width="150">26.12.2024 09:13</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">31</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KD0HLP" class="pl" target="_blank">KD0HLP</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KD0HLP" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">W0SUN   Y / XLX720</td>
+   <td width="150">26.12.2024 09:12</td>
+   <td align="center" width="30">I</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">32</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KG0REK" class="pl" target="_blank">KG0REK</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KG0REK" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KG0REK  B</td>
+   <td width="150">26.12.2024 08:53</td>
+   <td align="center" width="30">F</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">33</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/ca.png" height="15" alt="Canada" /><span>Canada</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/VA3UV" class="pl" target="_blank">VA3UV</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/VA3UV" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 08:43</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">34</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/it.png" height="15" alt="Italy" /><span>Italy</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/IT9IJI" class="pl" target="_blank">IT9IJI</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/IT9IJI" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 08:13</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">35</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/ca.png" height="15" alt="Canada" /><span>Canada</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/VE3XID" class="pl" target="_blank">VE3XID</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/VE3XID" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 08:07</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">36</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N7QXH" class="pl" target="_blank">N7QXH</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N7QXH" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">N7QXH   D</td>
+   <td width="150">26.12.2024 07:45</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">37</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N7MYW" class="pl" target="_blank">N7MYW</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N7MYW" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 07:45</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">38</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KB7RQQ" class="pl" target="_blank">KB7RQQ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KB7RQQ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 07:42</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">39</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KO4UXX" class="pl" target="_blank">KO4UXX</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KO4UXX" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">26.12.2024 07:32</td>
+   <td align="center" width="30">A</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">40</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KB6UMY" class="pl" target="_blank">KB6UMY</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KB6UMY" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KB6UMY  B</td>
+   <td width="150">26.12.2024 00:00</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">41</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W9SJO" class="pl" target="_blank">W9SJO</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W9SJO" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 21:38</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">42</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/WA2NYY" class="pl" target="_blank">WA2NYY</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/WA2NYY" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 21:34</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">43</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KE0SMR" class="pl" target="_blank">KE0SMR</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KE0SMR" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 20:07</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">44</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KB0VGD" class="pl" target="_blank">KB0VGD</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KB0VGD" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 19:07</td>
+   <td align="center" width="30">F</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">45</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W0KVZ" class="pl" target="_blank">W0KVZ</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W0KVZ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KF0LPT  B / XLX372</td>
+   <td width="150">25.12.2024 18:20</td>
+   <td align="center" width="30">I</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">46</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N7EAL" class="pl" target="_blank">N7EAL</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N7EAL" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 18:17</td>
+   <td align="center" width="30">F</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">47</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N0KAT" class="pl" target="_blank">N0KAT</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N0KAT" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">N0KAT   D</td>
+   <td width="150">25.12.2024 18:00</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">48</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/K1UPA" class="pl" target="_blank">K1UPA</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/K1UPA" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 17:26</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">49</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KA5JKI" class="pl" target="_blank">KA5JKI</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KA5JKI" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 17:02</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">50</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KE9BVB" class="pl" target="_blank">KE9BVB</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KE9BVB" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 15:23</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">51</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/W6DOZ" class="pl" target="_blank">W6DOZ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/W6DOZ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 15:06</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">52</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KF0PQQ" class="pl" target="_blank">KF0PQQ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KF0PQQ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 14:42</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">53</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KN6VV" class="pl" target="_blank">KN6VV</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KN6VV" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 13:05</td>
+   <td align="center" width="30">F</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">54</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/au.png" height="15" alt="Australia" /><span>Australia</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/VK2MFW" class="pl" target="_blank">VK2MFW</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/VK2MFW" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 12:37</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">55</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/WD1AJM" class="pl" target="_blank">WD1AJM</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/WD1AJM" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 12:12</td>
+   <td align="center" width="30">H</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">56</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/N4AAA" class="pl" target="_blank">N4AAA</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/N4AAA" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 11:06</td>
+   <td align="center" width="30">A</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">57</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KO4RXP" class="pl" target="_blank">KO4RXP</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KO4RXP" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 11:04</td>
+   <td align="center" width="30">G</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">58</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KC6PCB" class="pl" target="_blank">KC6PCB</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KC6PCB" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 10:17</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+   <td align="center" valign="middle" width="35">59</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/us.png" height="15" alt="United States" /><span>United States</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/KB2IDX" class="pl" target="_blank">KB2IDX</a></td>
+   <td width="60"></td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/KB2IDX" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">KB2IDX  B</td>
+   <td width="150">25.12.2024 09:42</td>
+   <td align="center" width="30">D</td>
+ </tr>
+  <tr height="30" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+   <td align="center" valign="middle" width="35">60</td>
+   <td align="center" width="60"><a href="#" class="tip"><img src="./img/flags/ca.png" height="15" alt="Canada" /><span>Canada</span></a></td>
+   <td width="75"><a href="https://www.qrz.com/db/VA3YZZ" class="pl" target="_blank">VA3YZZ</a></td>
+   <td width="60">DMR</td>
+   <td width="50" align="center"><a href="http://www.aprs.fi/VA3YZZ" class="pl" target="_blank"><img src="./img/sat.png" /></a></td>
+   <td width="150">XLX303  G / BM3102</td>
+   <td width="150">25.12.2024 09:40</td>
+   <td align="center" width="30">D</td>
+ </tr> 
+ 
+</table>
+
+
+</td>
+<td style="padding-left:50px;" align="center" valign="top">
+   
+   
+
+
+<table class="listingtable">
+
+ <tr>
+   
+      <th>CO Severe WX<br><a >WIRES-X 65045</a><br><a>AllStar 289800</a><br><a href="http://brandmeister.network/?page=lh&DestinationID=31083" target="_blank">BM 31083</a><br><a>DG-ID 10</a><br><br />A</th>
+
+   
+      <th>Mountain Skynet<br><a >WIRES-X 00587<a></a><br><a href="http://brandmeister.network/?page=lh&DestinationID=31084" target="_blank">BM 31084</a><br><a>DG-ID 11</a><br><br><br />B</th>
+
+   
+      <th>Olympic Mountain<br><a > Digital</a><br><a >WIRES-X 04429<BR> <a>AllStar 289802<br> <a href="http://brandmeister.network/?page=lh&DestinationID=314072" target="_blank">BM 314072</a><br> <a>DG-ID 12</a><br />C</th>
+
+   
+      <th>Colorado HD<br><a >WIRES-X 43674</a><br> <a href="http://brandmeister.network/?page=lh&DestinationID=31088" target="_blank">BM 31088</a><br><a>DG-ID 13</a><br><br><br />D</th>
+
+   
+      <th>NoCO<br><a >WIRES-X 80851</a><br> <a href="http://brandmeister.network/?page=lh&DestinationID=3171" target="_blank">BM 3171</a> <br><a>DG-ID 14</a><br><br><br />E</th>
+
+   
+      <th>SuperFreq Digital<br><a >WIRES-X 85958</a><br> <a href="http://brandmeister.network/?page=lh&DestinationID=310869" target="_blank">BM 310869</a> <br><a>DG-ID 15</a><br><br><br />F</th>
+
+   
+      <th><a href="http://multi-reflector.pistar.uk" target="_blank">Pi-Star Chat</a><br><a href="http://brandmeister.network/?page=lh&DestinationID=31672" target="_blank">BM 31672</a><br><a>DG-ID 16</a><br><br><br><br><br />G</th>
+
+   
+      <th>Venture Overland<br><a >WIRES-X 81335</a><br>AllStar 54897</a><br> <a href="http://brandmeister.network/?page=lh&DestinationID=31655" target="_blank">BM 31655</a><br><a>DG-ID 17</a><br><br />H</th>
+
+   
+      <th>Interlink<br>TGIF 720</br><a href="http://www.amcomm.network/en/servers" target="_blank">AmComm 31088</a><br><a href="https://xlx720.parkerradio.org/" target="_blank">XLX720 PRA</a></br>XLX372<br>DG-ID 18<br><br />I</th>
+
+   
+      <th>Special K<br><a >TGIF 420<br><a href="http://58823.nodes.allstarlink.org/supermon/link.php?nodes=58823" target="_blank">AllStar 58823</a><br><a>DG-ID 20</a><br><br><br><br />K</th>
+
+   
+      <th>VHF+<br><a >Weak Signal<br><a>NET<br><a>D-Star</a><br><a>DG-ID 22</a><br><br><br />M</th>
+
+</tr>
+<tr bgcolor="#FFFFFF" style="padding:0px;">
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0CDM-B" class="pl" target="_blank">W0CDM-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N0TOA-B" class="pl" target="_blank">N0TOA-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/WD0AJG-D" class="pl" target="_blank">WD0AJG-D</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0CDM-B" class="pl" target="_blank">W0CDM-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/WD0HDR-B" class="pl" target="_blank">WD0HDR-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/WN7ANT-D" class="pl" target="_blank">WN7ANT-D</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF0MVS-B" class="pl" target="_blank">KF0MVS-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K0LEE-B" class="pl" target="_blank">K0LEE-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N7ABG-B" class="pl" target="_blank">N7ABG-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N9DYO-B" class="pl" target="_blank">N9DYO-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N0KMO-B" class="pl" target="_blank">N0KMO-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W7NEE-B" class="pl" target="_blank">W7NEE-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/AE2TB-B" class="pl" target="_blank">AE2TB-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF7CBU-B" class="pl" target="_blank">KF7CBU-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K0LEE-B" class="pl" target="_blank">K0LEE-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KG7FXD-B" class="pl" target="_blank">KG7FXD-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/DG6OAY-B" class="pl" target="_blank">DG6OAY-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/AB4LW-B" class="pl" target="_blank">AB4LW-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/WA3ADI-B" class="pl" target="_blank">WA3ADI-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K3FZT-B" class="pl" target="_blank">K3FZT-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KA2Y-B" class="pl" target="_blank">KA2Y-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KE0MKM-B" class="pl" target="_blank">KE0MKM-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KB0TDW-B" class="pl" target="_blank">KB0TDW-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/AE0NV-B" class="pl" target="_blank">AE0NV-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KI5SYR-B" class="pl" target="_blank">KI5SYR-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N0AA-B" class="pl" target="_blank">N0AA-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0DCH-B" class="pl" target="_blank">W0DCH-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N5FKU-B" class="pl" target="_blank">N5FKU-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF0ODD-B" class="pl" target="_blank">KF0ODD-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K3FZT-B" class="pl" target="_blank">K3FZT-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KD0YD-B" class="pl" target="_blank">KD0YD-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF0IGK-B" class="pl" target="_blank">KF0IGK-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KD0YD-B" class="pl" target="_blank">KD0YD-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KC8I-B" class="pl" target="_blank">KC8I-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KE0DC-B" class="pl" target="_blank">KE0DC-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KJ7T-B" class="pl" target="_blank">KJ7T-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KJ7T-B" class="pl" target="_blank">KJ7T-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KE0MKM-B" class="pl" target="_blank">KE0MKM-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0WAL-B" class="pl" target="_blank">W0WAL-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W6DS-B" class="pl" target="_blank">W6DS-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0KPH-B" class="pl" target="_blank">W0KPH-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0KVZ-B" class="pl" target="_blank">W0KVZ-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/AD0HI-B" class="pl" target="_blank">AD0HI-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N1AJW-B" class="pl" target="_blank">N1AJW-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0KVZ-B" class="pl" target="_blank">W0KVZ-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0JRK-B" class="pl" target="_blank">W0JRK-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W1VAN-B" class="pl" target="_blank">W1VAN-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W1VAN-B" class="pl" target="_blank">W1VAN-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF0ICI-B" class="pl" target="_blank">KF0ICI-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KG0REK-B" class="pl" target="_blank">KG0REK-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W4SHB-B" class="pl" target="_blank">W4SHB-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0SUN-D" class="pl" target="_blank">W0SUN-D</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W6SPY-B" class="pl" target="_blank">W6SPY-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N1RIJ-B" class="pl" target="_blank">N1RIJ-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N7MYW-B" class="pl" target="_blank">N7MYW-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KB3HWM-B" class="pl" target="_blank">KB3HWM-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KF0LPT-B" class="pl" target="_blank">KF0LPT-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/N1UKJ-B" class="pl" target="_blank">N1UKJ-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/WD0HDR-B" class="pl" target="_blank">WD0HDR-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W7FMJ-B" class="pl" target="_blank">W7FMJ-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/W0CDM-B" class="pl" target="_blank">W0CDM-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K5NWZ-D" class="pl" target="_blank">K5NWZ-D</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+   <td valign="top" style="border:0px;padding:0px;">
+   
+      <table width="100" border="0" style="padding:0px;margin:0px;">
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KC0IJH-B" class="pl" target="_blank">KC0IJH-B</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#F1FAFA" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#F1FAFA';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/K0FYR-H" class="pl" target="_blank">K0FYR-H</a> </td>
+            </tr>
+            <tr height="25" bgcolor="#FFFFFF" onMouseOver="this.bgColor='#FFFFCA';" onMouseOut="this.bgColor='#FFFFFF';">
+               <td valign="top" style="border-bottom:1px #C1DAD7 solid;"><a href="http://www.aprs.fi/KB0UOA-B" class="pl" target="_blank">KB0UOA-B</a> </td>
+            </tr>
+      </table>
+   
+   </td>
+</tr></table>    
+
+
+</td>
+</tr>
+</table>     
+
+   <div style="width:100%;text-align:center;margin-top:50px;"><a href="mailto:W0RMT.1@gmail.com" style="font-family:verdana;color:#E6E6E6;font-size:12pt;text-decoration:none;">W0RMT.1@gmail.com</a></div>
+
+   </div>
+
+</body>
+</html>
+
