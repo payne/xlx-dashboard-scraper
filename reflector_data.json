@@ -614,73 +614,68 @@
     "transmitting" : false
   } ],
   "modules" : [ {
-    "name" : "<table width=\"100%\" border=\"0\">\n <tbody>\n  <tr>\n   <td align=\"left\">\n    <form name=\"frmFilterCallSign\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetCallsignFilter\" placeholder=\"Callsign\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n   <td align=\"right\" style=\"padding-right:3px;\">\n    <form name=\"frmFilterModule\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetModuleFilter\" placeholder=\"Module\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n  </tr>\n </tbody>\n</table>",
-    "label" : "<table width=\"100%\" border=\"0\">\n <tbody>\n  <tr>\n   <td align=\"left\">\n    <form name=\"frmFilterCallSign\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetCallsignFilter\" placeholder=\"Callsign\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n   <td align=\"right\" style=\"padding-right:3px;\">\n    <form name=\"frmFilterModule\" method=\"post\" action=\"./index.php\">\n     <input type=\"hidden\" name=\"do\" value=\"SetFilter\"> <input type=\"text\" class=\"FilterField\" value=\"\" name=\"txtSetModuleFilter\" placeholder=\"Module\" onfocus=\"SuspendPageRefresh();\" onblur=\"setTimeout(ReloadPage, 10000);\"> <input type=\"submit\" value=\"Apply\" class=\"FilterSubmit\">\n    </form></td>\n  </tr>\n </tbody>\n</table>",
-    "connections" : [ ],
-    "nodes" : [ "W0CDM-B", "N0TOA-B" ]
-  }, {
     "name" : "CO Severe WX",
-    "label" : "CO Severe WX<br><a>WIRES-X 65045</a><br><a>AllStar 289800</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31083\" target=\"_blank\">BM 31083</a><br><a>DG-ID 10</a><br><br>\nA",
+    "label" : "CO Severe WXWIRES-X 65045AllStar 289800BM 31083DG-ID 10\nA",
     "connections" : [ "WIRES-X: 65045</a>", "AllStar: 289800</a>", "BrandMeister: 31083</a>" ],
     "dgId" : "10</a>",
-    "nodes" : [ "WD0AJG-D" ]
+    "nodes" : [ "W0CDM-B", "N0TOA-B" ]
   }, {
     "name" : "Mountain Skynet",
-    "label" : "Mountain Skynet<br><a>WIRES-X 00587</a><a></a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31084\" target=\"_blank\">BM 31084</a><br><a>DG-ID 11</a><br><br><br>\nB",
+    "label" : "Mountain SkynetWIRES-X 00587BM 31084DG-ID 11\nB",
     "connections" : [ "WIRES-X: 00587</a><a></a>", "BrandMeister: 31084</a>" ],
     "dgId" : "11</a>",
-    "nodes" : [ "W0CDM-B", "WD0HDR-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "Olympic Mountain",
-    "label" : "Olympic Mountain<br><a> Digital</a><br><a>WIRES-X 04429<br></a><a>AllStar 289802<br></a><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=314072\" target=\"_blank\">BM 314072</a><br><a>DG-ID 12</a><br>\nC",
+    "label" : "Olympic Mountain DigitalWIRES-X 04429AllStar 289802BM 314072DG-ID 12\nC",
     "connections" : [ "WIRES-X: 04429", "AllStar: 289802", "BrandMeister: 314072</a>" ],
     "dgId" : "12</a>",
-    "nodes" : [ "WN7ANT-D", "KF0MVS-B", "K0LEE-B", "N7ABG-B", "N9DYO-B", "N0KMO-B", "W7NEE-B", "AE2TB-B", "KF7CBU-B", "K0LEE-B", "KG7FXD-B", "DG6OAY-B", "AB4LW-B", "WA3ADI-B", "K3FZT-B", "KA2Y-B", "KE0MKM-B", "KB0TDW-B", "AE0NV-B", "KI5SYR-B", "N0AA-B", "W0DCH-B", "N5FKU-B", "KF0ODD-B", "K3FZT-B", "KD0YD-B", "KF0IGK-B", "KD0YD-B", "KC8I-B", "KE0DC-B", "KJ7T-B", "KJ7T-B", "KE0MKM-B", "W0WAL-B", "W6DS-B", "W0KPH-B", "W0KVZ-B", "AD0HI-B", "N1AJW-B", "W0KVZ-B", "W0JRK-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "Colorado HD",
-    "label" : "Colorado HD<br><a>WIRES-X 43674</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31088\" target=\"_blank\">BM 31088</a><br><a>DG-ID 13</a><br><br><br>\nD",
+    "label" : "Colorado HDWIRES-X 43674BM 31088DG-ID 13\nD",
     "connections" : [ "WIRES-X: 43674</a>", "BrandMeister: 31088</a>" ],
     "dgId" : "13</a>",
-    "nodes" : [ "W1VAN-B" ]
+    "nodes" : [ "WD0AJG-D" ]
   }, {
     "name" : "NoCO",
-    "label" : "NoCO<br><a>WIRES-X 80851</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=3171\" target=\"_blank\">BM 3171</a> <br><a>DG-ID 14</a><br><br><br>\nE",
+    "label" : "NoCOWIRES-X 80851BM 3171 DG-ID 14\nE",
     "connections" : [ "WIRES-X: 80851</a>", "BrandMeister: 3171</a>" ],
     "dgId" : "14</a>",
-    "nodes" : [ "W1VAN-B", "KF0ICI-B", "KG0REK-B", "W4SHB-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "SuperFreq Digital",
-    "label" : "SuperFreq Digital<br><a>WIRES-X 85958</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=310869\" target=\"_blank\">BM 310869</a> <br><a>DG-ID 15</a><br><br><br>\nF",
+    "label" : "SuperFreq DigitalWIRES-X 85958BM 310869 DG-ID 15\nF",
     "connections" : [ "WIRES-X: 85958</a>", "BrandMeister: 310869</a>" ],
     "dgId" : "15</a>",
-    "nodes" : [ "W0SUN-D" ]
+    "nodes" : [ "W0CDM-B", "WD0HDR-B" ]
   }, {
     "name" : "<a href=\"http://multi-reflector.pistar.uk\" target=\"_blank\">Pi-Star Chat</a>",
-    "label" : "<a href=\"http://multi-reflector.pistar.uk\" target=\"_blank\">Pi-Star Chat</a><br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31672\" target=\"_blank\">BM 31672</a><br><a>DG-ID 16</a><br><br><br><br><br>\nG",
+    "label" : "Pi-Star ChatBM 31672DG-ID 16\nG",
     "connections" : [ "BrandMeister: 31672</a>" ],
     "dgId" : "16</a>",
-    "nodes" : [ "W6SPY-B", "N1RIJ-B", "N7MYW-B", "KB3HWM-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "Venture Overland",
-    "label" : "Venture Overland<br><a>WIRES-X 81335</a><br>\nAllStar 54897<br><a href=\"http://brandmeister.network/?page=lh&amp;DestinationID=31655\" target=\"_blank\">BM 31655</a><br><a>DG-ID 17</a><br><br>\nH",
+    "label" : "Venture OverlandWIRES-X 81335\nAllStar 54897BM 31655DG-ID 17\nH",
     "connections" : [ "WIRES-X: 81335</a>", "AllStar: 54897", "BrandMeister: 31655</a>" ],
     "dgId" : "17</a>",
-    "nodes" : [ "KF0LPT-B", "N1UKJ-B", "WD0HDR-B", "W7FMJ-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "Interlink",
-    "label" : "Interlink<br>\nTGIF 720<br><a href=\"http://www.amcomm.network/en/servers\" target=\"_blank\">AmComm 31088</a><br><a href=\"https://xlx720.parkerradio.org/\" target=\"_blank\">XLX720 PRA</a><br>\nXLX372<br>\nDG-ID 18<br><br>\nI",
+    "label" : "Interlink\nTGIF 720AmComm 31088XLX720 PRA\nXLX372\nDG-ID 18\nI",
     "connections" : [ ],
     "dgId" : "18",
-    "nodes" : [ "W0CDM-B", "K5NWZ-D" ]
+    "nodes" : [ "WN7ANT-D", "KF0MVS-B", "K0LEE-B", "N7ABG-B", "N9DYO-B", "N0KMO-B", "W7NEE-B", "AE2TB-B", "KF7CBU-B", "K0LEE-B", "KG7FXD-B", "DG6OAY-B", "AB4LW-B", "WA3ADI-B", "K3FZT-B", "KA2Y-B", "KE0MKM-B", "KB0TDW-B", "AE0NV-B", "KI5SYR-B", "N0AA-B", "W0DCH-B", "N5FKU-B", "KF0ODD-B", "K3FZT-B", "KD0YD-B", "KF0IGK-B", "KD0YD-B", "KC8I-B", "KE0DC-B", "KJ7T-B", "KJ7T-B", "KE0MKM-B", "W0WAL-B", "W6DS-B", "W0KPH-B", "W0KVZ-B", "AD0HI-B", "N1AJW-B", "W0KVZ-B", "W0JRK-B" ]
   }, {
     "name" : "Special K",
-    "label" : "Special K<br><a>TGIF 420<br></a><a href=\"http://58823.nodes.allstarlink.org/supermon/link.php?nodes=58823\" target=\"_blank\">AllStar 58823</a><br><a>DG-ID 20</a><br><br><br><br>\nK",
+    "label" : "Special KTGIF 420AllStar 58823DG-ID 20\nK",
     "connections" : [ "AllStar: 58823</a>" ],
     "dgId" : "20</a>",
-    "nodes" : [ "KC0IJH-B", "K0FYR-H", "KB0UOA-B" ]
+    "nodes" : [ ]
   }, {
     "name" : "VHF+",
-    "label" : "VHF+<br><a>Weak Signal<br></a><a>NET<br></a><a>D-Star</a><br><a>DG-ID 22</a><br><br><br>\nM",
+    "label" : "VHF+Weak SignalNETD-StarDG-ID 22\nM",
     "connections" : [ ],
     "dgId" : "22</a>",
     "nodes" : [ ]

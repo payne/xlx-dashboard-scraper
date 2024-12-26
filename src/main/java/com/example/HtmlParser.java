@@ -1,4 +1,3 @@
-
 package com.example;
 
 import com.example.model.Module;
@@ -18,6 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HtmlParser {
+
     public static void main(String[] args) {
         try {
             String htmlFile = "src/main/resources/xlx303.html";
@@ -91,15 +91,37 @@ public class HtmlParser {
         return users;
     }
 
+    private static String getLabelFromHeader(Element header) {
+        // The label is typically the last line in the header after all the <br> tags
+        String[] parts = header.html().split("<br\\s*/>");
+        if (parts.length > 0) {
+            String lastPart = parts[parts.length - 1].trim();
+            // Remove any HTML tags that might remain
+            return lastPart.replaceAll("<[^>]+>", "").trim();
+        }
+        return "";
+    }
+
     private static List<Module> parseModules(Document doc) {
         List<Module> modules = new ArrayList<>();
-        Elements moduleHeaders = doc.select("table.listingtable:last-of-type tr:first-of-type th");
+
+        // Find the bottom half of the page with modules
+        Elements allTables = doc.select("table.listingtable");
+        if (allTables.size() < 2) {
+            return modules;
+        }
+
+        // Get the module table (last listingtable on the page)
+        Element moduleTable = allTables.last();
+        Elements moduleHeaders = moduleTable.select("tr:first-child th");
 
         for (Element header : moduleHeaders) {
             Module module = new Module();
             String[] parts = header.html().split("<br>");
 
-            module.setName(parts[0].trim());
+            // Parse the name (remove any trailing <br>)
+            String name = parts[0].replaceAll("<br.*$", "").trim();
+            module.setName(name);
 
             List<String> connections = new ArrayList<>();
             for (String part : parts) {
@@ -107,7 +129,7 @@ public class HtmlParser {
                     connections.add("WIRES-X: " + part.replaceAll(".*WIRES-X\\s+", "").trim());
                 } else if (part.contains("AllStar")) {
                     connections.add("AllStar: " + part.replaceAll(".*AllStar\\s+", "").trim());
-                } else if (part.contains("BM")) {
+                } else if (part.contains("BM ")) {
                     connections.add("BrandMeister: " + part.replaceAll(".*BM\\s+", "").trim());
                 } else if (part.contains("DG-ID")) {
                     module.setDgId(part.replaceAll(".*DG-ID\\s+", "").trim());
@@ -115,14 +137,17 @@ public class HtmlParser {
             }
             module.setConnections(connections);
 
-            // Get the label (last character, usually A-M)
-            String label = header.html().replaceAll(".*<br\\s*/>\\s*", "").trim();
-            module.setLabel(label);
+            // Get the label (usually A-M)
+            module.setLabel(getLabelFromHeader(header));
 
-            // Get nodes for this module
-            String moduleSelector = "table.listingtable:last-of-type tr:eq(1) td:eq(" + moduleHeaders.indexOf(header) + ") table tr td a";
-            List<String> nodes = doc.select(moduleSelector).stream()
+            // Find the corresponding node cell in the table body
+            int columnIndex = header.elementSiblingIndex();
+            Element nodeCell = moduleTable.select("tr").get(1).select("td").get(columnIndex);
+
+            // Extract nodes from the nested table
+            List<String> nodes = nodeCell.select("table tr td a").stream()
                     .map(Element::text)
+                    .filter(text -> !text.isEmpty())
                     .collect(Collectors.toList());
             module.setNodes(nodes);
 
@@ -132,3 +157,4 @@ public class HtmlParser {
         return modules;
     }
 }
+
